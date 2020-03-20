@@ -1,112 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6904d11-395c-4575-ae3e-c33c09dd98d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questionManagementSystem.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/replay_pid6928.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/questionManagement/QuestionManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/questionManagement/QuestionManagementApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/questionManagement/contorller/ControllerExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/questionManagement/contorller/ControllerExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/com.questionManagement/questionManagementSystem/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/com.questionManagement/questionManagementSystem/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/QuestionManagementApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/QuestionManagementApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/aop/ControllerLoggerAspectJConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/aop/ControllerLoggerAspectJConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/aop/ServiceLoggerAspectJConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/aop/ServiceLoggerAspectJConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/CreatePaper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/CreatePaper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/MyPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/MyPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/Similarity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/Similarity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/WebFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/WebFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/fieldEnum/AnswerEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/fieldEnum/AnswerEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/fieldEnum/AnswerStageEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/fieldEnum/AnswerStageEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/fieldEnum/BaseStatusEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/fieldEnum/BaseStatusEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/fieldEnum/DifficultyEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/fieldEnum/DifficultyEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/fieldEnum/QuestionTypeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/fieldEnum/QuestionTypeEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/fieldEnum/UserSexEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/fieldEnum/UserSexEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/fieldEnum/UserStatusEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/constant/fieldEnum/UserStatusEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/AnswerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/AnswerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/AuthorityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/AuthorityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/ControllerExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/ControllerExample.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/PaperController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/PaperController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/QuestionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/QuestionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/QuestionTypeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/QuestionTypeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/RoleAuthorityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/RoleAuthorityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/RoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/SubjectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/SubjectController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/VerifyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/contorller/VerifyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/Answer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/Answer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/Authority.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/Authority.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/Paper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/Paper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/Question.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/QuestionType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/QuestionType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/RoleAuthority.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/RoleAuthority.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/Subject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/Subject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/dto/AnswerDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/dto/AnswerDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/dto/AnswerQuestionDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/dto/AnswerQuestionDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/dto/PaperDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/dto/PaperDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/dto/QuestionDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/dto/QuestionDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/dto/QuestionTypeDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/dto/QuestionTypeDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/dto/SubjectDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/dto/SubjectDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/dto/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/entity/dto/UserDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/IAnswerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/IAnswerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/IAuthorityRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/IAuthorityRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/IPaperRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/IPaperRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/IQuestionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/IQuestionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/IQuestionTypeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/IQuestionTypeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/IRoleAuthorityRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/IRoleAuthorityRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/IRoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/IRoleRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/ISubjectRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/ISubjectRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/IUserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/repository/IUserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/IAnswerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/IAnswerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/IAuthorityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/IAuthorityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/IPaperService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/IPaperService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/IQuestionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/IQuestionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/IQuestionTypeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/IQuestionTypeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/IRoleAuthorityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/IRoleAuthorityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/IRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/IRoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/ISubjectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/ISubjectService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/AnswerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/AnswerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/AuthorityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/AuthorityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/PaperServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/PaperServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/QuestionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/QuestionServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/QuestionTypeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/QuestionTypeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/RoleAuthorityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/RoleAuthorityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/RoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/RoleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/SubjectServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/SubjectServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/util/FileUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/util/FileUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/util/GA/GA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/util/GA/GA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/util/GA/Paper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/util/GA/Paper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/util/GA/Population.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/util/GA/Population.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/util/GA/Rule.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/util/GA/Rule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/util/HttpInfoUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/util/HttpInfoUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/util/PageUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/util/PageUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/util/SpringContextHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/util/SpringContextHolder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/util/StringUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/util/StringUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/util/UnicodeUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/util/UnicodeUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/questionManagement/util/VerifyUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/questionManagement/util/VerifyUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/questionManagement/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/questionManagement/AppTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/questionManagement/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/questionManagement/BaseTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/questionManagement/RepositorysTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/questionManagement/RepositorysTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/questionManagement/SubjectRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/questionManagement/SubjectRepositoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/questionManagement/TestLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/questionManagement/TestLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testgitlab" beforeDir="false" afterPath="$PROJECT_DIR$/testgitlab" afterDir="false" />
-    </list>
+    <list default="true" id="c6904d11-395c-4575-ae3e-c33c09dd98d0" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +110,7 @@
       <updated>1584088895746</updated>
       <workItem from="1584088898064" duration="5365000" />
       <workItem from="1584502039847" duration="850000" />
-      <workItem from="1584676423969" duration="748000" />
+      <workItem from="1584676423969" duration="754000" />
     </task>
     <servers />
   </component>
