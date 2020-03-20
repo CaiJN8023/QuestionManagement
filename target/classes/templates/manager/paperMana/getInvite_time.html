@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>欢迎</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="/AdminLTE/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- DataTables -->
+  	<link rel="stylesheet" href="/AdminLTE/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/AdminLTE/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+          page. However, you can choose any other skin. Make sure you
+          apply the skin class to the body tag so the changes take effect.
+    -->
+    <link rel="stylesheet" href="/AdminLTE/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="/AdminLTE/dist/css/skins/skin-blue.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <style>
+    	.even{
+    		background-color: #ecf0f5;
+    	}
+    </style>
+  </head>
+
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <!-- Main Header -->
+      <header class="main-header">
+
+        <!-- Logo -->
+        <a href="/toMain" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b></b></span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b></b></span>
+        </a>
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <span style=" font-size: 25px; line-height: 200%; margin-left: 17%;">欢迎登陆试题库管理系统</span>
+          <!-- 动态显示时间 -->
+          <span id="showTime" style=" font-size: 16px; font-weight: bold; margin-left: 8%; color: white"></span>
+          <!-- Navbar Right Menu -->
+          <div class="navbar-custom-menu" style="margin-right: 8%;">
+            <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+              <li class="dropdown messages-menu">
+                <!-- Menu toggle button -->
+                
+
+             
+            <!-- User menu -->
+			<li class="dropdown">
+	             <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
+	               <span th:text="${session.user.name}">User</span><span class="caret"></span>
+	             </a>
+	             <ul class="dropdown-menu">
+	               <li role="presentation"><a role="menuitem" tabindex="-1" th:href="@{/toMyInfo(id=${session.user.id})}" style="text-align: center"><i class="fa fa-info-circle"></i>个人信息</a></li>
+			     <li role="presentation"><a role="menuitem" tabindex="-1" th:href="@{/toMyResetPassword(id=${session.user.id})}" style="text-align: center"><i class="fa fa-pencil"></i>修改密码</a></li>
+			     <li role="presentation" class="divider"></li>
+			     <li role="presentation"><a role="menuitem" tabindex="-1" href="/logout" style="text-align: center"><i class="fa fa-sign-out"></i>退&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出</a></li>
+			   </ul>
+			</li>
+             
+              
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+          <!-- Sidebar user panel (optional) -->
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img src="/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+              <p th:text="${session.user.name}">Alexander Pierce</p>
+              <!-- Status -->
+              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+          </div>
+
+
+          <!-- Sidebar Menu -->
+          <ul class="sidebar-menu" >
+            <li class="header">Please Choose</li>
+            
+            <li th:each="fatherNode:${session.fatherNodes}" class="treeview">
+            	<a th:href="${fatherNode.url}" class="fatherNode">
+            		<i class="fa fa-files-o"></i>
+            		<span th:text="${fatherNode.name}"></span>
+            		<i th:if="${fatherNode.url == '/#'}" class="fa fa-angle-left pull-right"></i>
+            	</a>
+            	<ul class="treeview-menu">
+            		<li th:each="childNode:${session.childNodes}" th:if="${childNode.parentId == fatherNode.id}">
+            			<a th:href="${childNode.url}" th:text="${childNode.name}"></a>
+            		</li>
+            	</ul>
+            </li>
+           
+          </ul><!-- /.sidebar-menu -->
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            	欢迎您！
+<!--             <small>User</small> -->
+            <small th:text="${session.user.name}">User</small>
+          </h1>
+          <!-- <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+            <li class="active">Here</li>
+          </ol> -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+          <!-- Your Page Content Here -->
+         <div class="box box-info" style="width: 70%; margin: 0 auto 20px">
+            <div class="box-header with-border">
+              <h3 class="box-title">测试管理</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form class="form-horizontal" action="getInviteCode" method="POST">
+              <div class="box-body">
+              	<input type="hidden" id="id" name="id" th:value="${paper.id}"/>
+                <div class="form-group">
+                  <label for="name" class="col-sm-2 control-label">试卷名称</label>
+
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" id="name" th:value="${paper.name}" name="name" readonly="readonly">
+                  </div>
+                </div>
+                <div class="form-group">
+                	<label for="inviteCode" class="col-sm-2 control-label">邀请码</label>
+
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" id="inviteCode" th:value="${inviteCode}"
+                    	 name="inviteCode" readonly="readonly" title="将邀请码发送给学生，学生根据邀请码查找试卷进行测试！">
+                  </div>
+                </div>
+                <div class="form-group">
+                	<label for="" class="col-sm-2 control-label">测试时间段</label>
+
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="startTime"  name="startTime" 
+                    	readonly="readonly" placeholder="时间段开始">
+                  </div>
+<!--                   <div class="col-sm-1"> -->
+<!--                   	—— -->
+<!--                   </div> -->
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="endTime"  name="endTime" 
+                    	readonly="readonly" placeholder="时间段结束" />
+                  </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer" style="padding: 10px 20%">
+                <a href="/paperMana/inviteMana"><button type="button" class="btn btn-default">取消</button></a>
+                <button type="submit" class="btn btn-info btn-default" style="margin-left: 65%;">确定</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
+
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+
+    </div><!-- ./wrapper -->
+
+    <!-- REQUIRED JS SCRIPTS -->
+
+    <!-- jQuery 2.1.4 -->
+    <script src="/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/AdminLTE/dist/js/app.min.js"></script>
+    <script src="/AdminLTE/bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="/AdminLTE/dist/js/demo.js"></script>
+    <script src="/AdminLTE/dist/js/adminlte.min.js"></script>
+    
+    <!-- laydate -->
+    <script src="/laydate/laydate.js"></script>
+    
+    <!-- DataTables -->
+	<script src="/AdminLTE/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="/AdminLTE/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+	<!-- SlimScroll -->
+	<script src="/AdminLTE/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Optionally, you can add Slimscroll and FastClick plugins.
+         Both of these plugins are recommended to enhance the
+         user experience. Slimscroll is required when using the
+         fixed layout. -->
+  </body>
+  
+  <script type="text/javascript">
+  	$(function(){
+  		$(".fatherNode").click(function(){
+  			var href = $(this).attr("href");
+  			if(href != "/#"){
+  				window.location.href = href;
+  			}
+  		})
+  		
+  		$('#infoTable').DataTable({
+	      'paging'      : true,
+	      'lengthChange': true,
+	      'searching'   : true,
+	      'ordering'    : true,
+	      'info'        : true,
+	      'autoWidth'   : true
+	    })
+  		
+  		$(".inviteBtn").click(function(){
+  			var href = $(this).parent().find("a").attr("href");
+  			$.ajax({
+  				url: href,
+  				type: "get",
+  				dataType: "text",
+  				success: function(result){
+  					alert("邀请码为：" + result + "，将邀请码发送给学生，学生根据邀请码查找试卷进行测试！");
+  					window.location.href = "/paperMana/inviteMana";
+  				}
+  			})
+  		});
+  		
+		laydate.render({
+			elem: '#startTime',
+			type: 'datetime',
+			format: 'yyyy-MM-dd HH:mm:ss',
+			trigger: 'click'
+		});
+		laydate.render({
+			elem: '#endTime',
+			type: 'datetime',
+			format: 'yyyy-MM-dd HH:mm:ss',
+			trigger: 'click'
+		});
+        
+  		setInterval(getDate, 1000);
+  	})
+  	
+  	
+  	function getDate(){
+		var today = new Date();
+		var date = today.getFullYear() + "年" + twoDigits(today.getMonth() + 1)
+					+ "月" + twoDigits(today.getDate()) + "日";
+		var week = "星期" + "日一二三四五六".charAt(today.getDay());
+		var time = twoDigits(today.getHours()) + ":" + twoDigits(today.getMinutes())
+					+ ":" + twoDigits(today.getSeconds());
+		$("#showTime").text(date + "  " + week + "  " + time);
+	}
+	function twoDigits(val){
+		if(val < 10)
+			return "0" + val;
+		return val;
+	}
+	
+  </script>
+</html>

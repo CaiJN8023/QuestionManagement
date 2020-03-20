@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>欢迎</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="/AdminLTE/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- DataTables -->
+  	<link rel="stylesheet" href="/AdminLTE/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/AdminLTE/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+          page. However, you can choose any other skin. Make sure you
+          apply the skin class to the body tag so the changes take effect.
+    -->
+    <link rel="stylesheet" href="/AdminLTE/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="/AdminLTE/dist/css/skins/skin-blue.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <style>
+    	.even{
+    		background-color: #ecf0f5;
+    	}
+    </style>
+  </head>
+
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <!-- Main Header -->
+      <header class="main-header">
+
+        <!-- Logo -->
+        <a href="toMain" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b></b></span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b></b></span>
+        </a>
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <span style=" font-size: 25px; line-height: 200%; margin-left: 17%;">欢迎登陆试题库管理系统</span>
+          <!-- 动态显示时间 -->
+          <span id="showTime" style=" font-size: 16px; font-weight: bold; margin-left: 8%; color: white"></span>
+          <!-- Navbar Right Menu -->
+          <div class="navbar-custom-menu" style="margin-right: 8%;">
+            <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+              <li class="dropdown messages-menu">
+                <!-- Menu toggle button -->
+                
+
+             
+            <!-- User menu -->
+			<li class="dropdown">
+	             <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
+	               <span th:text="${session.user.name}">User</span><span class="caret"></span>
+	             </a>
+	             <ul class="dropdown-menu">
+	               <li role="presentation"><a role="menuitem" tabindex="-1" th:href="@{/toMyInfo(id=${session.user.id})}" style="text-align: center"><i class="fa fa-info-circle"></i>个人信息</a></li>
+			     <li role="presentation"><a role="menuitem" tabindex="-1" th:href="@{/toMyResetPassword(id=${session.user.id})}" style="text-align: center"><i class="fa fa-pencil"></i>修改密码</a></li>
+			     <li role="presentation" class="divider"></li>
+			     <li role="presentation"><a role="menuitem" tabindex="-1" href="logout" style="text-align: center"><i class="fa fa-sign-out"></i>退&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出</a></li>
+			   </ul>
+			</li>
+             
+              
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+          <!-- Sidebar user panel (optional) -->
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img src="/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+              <p th:text="${session.user.name}">Alexander Pierce</p>
+              <!-- Status -->
+              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+          </div>
+
+
+          <!-- Sidebar Menu -->
+          <ul class="sidebar-menu" >
+            <li class="header">Please Choose</li>
+            
+            <li th:each="fatherNode:${session.fatherNodes}" class="treeview">
+            	<a th:href="${fatherNode.url}" class="fatherNode">
+            		<i class="fa fa-files-o"></i>
+            		<span th:text="${fatherNode.name}"></span>
+            		<i th:if="${fatherNode.url == '/#'}" class="fa fa-angle-left pull-right"></i>
+            	</a>
+            	<ul class="treeview-menu">
+            		<li th:each="childNode:${session.childNodes}" th:if="${childNode.parentId == fatherNode.id}">
+            			<a th:href="${childNode.url}" th:text="${childNode.name}"></a>
+            		</li>
+            	</ul>
+            </li>
+           
+          </ul><!-- /.sidebar-menu -->
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            	欢迎您！
+<!--             <small>User</small> -->
+            <small th:text="${session.user.name}">User</small>
+          </h1>
+          <!-- <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+            <li class="active">Here</li>
+          </ol> -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+          <!-- Your Page Content Here -->
+            <div class="box box-info" style="width: 70%; margin: 0 auto 20px">
+            <div class="box-header with-border">
+              <h3 class="box-title">编辑试题</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form class="form-horizontal" action="questionUpdate" method="POST" id="infoForm" th:object="${question}">
+            	<input type="hidden" name="id" th:value="*{id}"/>
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="creatorName" class="col-sm-2 control-label">创建者</label>
+
+                  <div class="col-sm-8">
+                    <input type="hidden" id="creatorId"  name="creatorId" th:value="*{creatorId}">
+                    <select id="creatorName" name="creatorName" class="form-control" disabled="disabled">
+						<option th:each="user:${users}" th:text="${user.name}" th:value="${user.id}" th:selected="*{creatorId} == ${user.id}"></option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="subjectId" class="col-sm-2 control-label">选择学科</label>
+					<input type="hidden" name="subjectId" th:value="*{subjectId}"/>
+                  <div class="col-sm-8">
+                  	<select id="subjectId" name="subjectId" class="form-control" data-required="ture" disabled="disabled">
+                  		<option th:each="subject:${subjects}" th:text="${subject.name}" th:value="${subject.id}" th:selected="*{subjectId} == ${subject.id}"></option>
+                  	</select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="typeId" class="col-sm-2 control-label">选择题型</label>
+                  <div class="col-sm-4">
+                  	<select id="typeId" name="typeId" class="form-control" data-required="ture">
+                  		<option th:each="type:${types}" th:text="${type.name}" th:value="${type.id}" th:selected="*{typeId} == ${type.id}"></option>
+                  	</select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="chapter" class="col-sm-2 control-label">选择章节</label>
+                  <div class="col-sm-4">
+                  	<select id="chapter" name="chapter" class="form-control" data-required="ture">
+                  		<option th:each="chapter:${chapters}" th:value="${chapter}" th:selected="*{chapter} == ${chapter}">
+                  			第<span th:text="${chapter}"></span>章节
+                  		</option>
+                  	</select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="difficulty" class="col-sm-2 control-label">选择难度</label>
+
+                  <div class="col-sm-4">
+                  	<select id=difficulty name="difficulty" class="form-control" data-required="ture">
+                  		<option th:each="difficulty:${difficulties}" th:text="${difficulty.name}" th:value="${difficulty.value}" th:selected="*{difficulty} == ${difficulty.value}"></option>
+                  	</select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="score" class="col-sm-2 control-label">所占分值</label>
+
+                  <div class="col-sm-6">
+                    <input type="text" th:value="*{score}" class="form-control" id="score"  name="score" placeholder="请输入0-99的整数"
+                   			onkeyup="this.value=this.value.replace(/\D/g,'')"
+						 	oninvalid="setCustomValidity('请输入正确分值');"
+						 	pattern="^[1-9][0-9]{0,1}$" maxlength=2 
+						 	oninput="setCustomValidity('')" required/>
+                  </div>
+                </div>
+                <div class="form-group">
+              		<label for="content" class="col-sm-2 control-label">题目内容</label>
+              		<div class="col-sm-8">
+                 		<textarea class="form-control" th:text="*{content}" rows="3" id="content" name="content" data-required="ture"></textarea>
+                 	</div>
+              	</div>
+              	<div class="form-group">
+              		<label for="optionA" class="col-sm-2 control-label">选项A</label>
+              		<div class="col-sm-8">
+                 		<textarea class="form-control option" th:text="*{optionA}" rows="1" id="optionA" name="optionA"></textarea>
+                 	</div>
+              	</div>
+              	<div class="form-group">
+              		<label for="optionB" class="col-sm-2 control-label">选项B</label>
+              		<div class="col-sm-8">
+                 		<textarea class="form-control option" th:text="*{optionB}" rows="1" id="optionB" name="optionB"></textarea>
+                 	</div>
+              	</div>
+              	<div class="form-group">
+              		<label for="optionC" class="col-sm-2 control-label">选项C</label>
+              		<div class="col-sm-8">
+                 		<textarea class="form-control option" th:text="*{optionC}" rows="1" id="optionC" name="optionC"></textarea>
+                 	</div>
+              	</div>
+              	<div class="form-group">
+              		<label for="optionD" class="col-sm-2 control-label">选项D</label>
+              		<div class="col-sm-8">
+                 		<textarea class="form-control option" th:text="*{optionD}" rows="1" id="optionD" name="optionD"></textarea>
+                 	</div>
+              	</div>
+               <div class="form-group">
+                  <label for="answer" class="col-sm-2 control-label">题目答案</label>
+                  <div class="col-sm-4">
+                  		<select name="answer" class="form-control choiceAnswer">
+                  			<option th:each="choice:${choices}" th:text="${choice.value}" th:value="${choice.value}" th:selected="*{answer} == ${choice.value}"></option>
+                  		</select>
+                  		<select name="answer" class="form-control judgeAnswer" >
+                  			<option th:each="judge:${judges}" th:text="${judge.value}" th:value="${judge.value}" th:selected="*{answer} == ${judge.value}"></option>
+                  		</select>
+                  		
+                  </div>
+                  <div class="col-sm-8">
+                  		<textarea name="answer" rows="3" class="form-control otherAnswer" th:text="*{answer}"></textarea>
+                  </div>
+                </div>
+	        	<div class="form-group">
+	                <label for="createTime" class="col-sm-2 control-label">创建时间</label>
+					<div class="col-sm-4">
+		                <div class="input-group date">
+		                  <div class="input-group-addon">
+		                    <i class="fa fa-calendar"></i>
+		                  </div>
+		                  <input type="text" class="form-control pull-right" id="createTime" name="createTime" 
+		                  		th:value="*{(createTime.month + 1) >= 10 ? (createTime.month + 1) : '0' + (createTime.month + 1)}
+		                  		 + '/' + *{(createTime.date) >= 10 ? (createTime.date) : '0' + (createTime.date)} 
+		                  		 + '/' + *{createTime.year + 1900}" readonly="readonly">
+		                </div>
+	                </div>
+	              </div>
+	             
+	              <!-- <div class="form-group">
+	                <label for="updateTime" class="col-sm-2 control-label">更新时间</label>
+					<div class="col-sm-4">
+		                <div class="input-group date">
+		                  <div class="input-group-addon">
+		                    <i class="fa fa-calendar"></i>
+		                  </div>
+		                  <input type="text" class="form-control pull-right" id="updateTime" name="updateTime" 
+		                  		th:value="*{(updateTime.month + 1) >= 10 ? (updateTime.month + 1) : '0' + (updateTime.month + 1)}
+		                  		 + '/' + *{(updateTime.date) >= 10 ? (updateTime.date) : '0' + (updateTime.date)} 
+		                  		 + '/' + *{updateTime.year + 1900}">
+		                </div>
+	                </div>
+	              </div> -->
+	              <div class="form-group">
+	              	<label for="status" class="col-sm-2 control-label">状态</label>
+	              	<div class="col-sm-4">
+<!--                   		<input class="form-control" th:value="*{status}" id="status" name="status" readonly="readonly"/> -->
+						<select id="status" name="status" class="form-control" data-required="true" >
+                  			<option th:each="status:${statuses}" th:text="${status.value}" th:value="${status.value}" th:selected="*{status} == ${status.value}"></option>
+                  		</select>
+                  	</div>
+	              </div>
+	              <div class="form-group">
+	              	<label for="text" class="col-sm-2 control-label">备注</label>
+	              	<div class="col-sm-8">
+                  		<textarea class="form-control" rows="3" id="text" name="text" th:text="*{text}"></textarea>
+                  	</div>
+	              </div>
+              </div>
+              
+              <!-- /.box-body -->
+              <div class="box-footer" style="padding: 10px 20%">
+                <a href="questionMana"><button type="button" class="btn btn-default">取消</button></a>
+                <button type="submit" id="submitBtn" class="btn btn-info btn-default" style="margin-left: 65%;">确定</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+
+    </div><!-- ./wrapper -->
+
+    <!-- REQUIRED JS SCRIPTS -->
+
+    <!-- jQuery 2.1.4 -->
+    <script src="/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- JqueryValidate -->
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+	<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+	<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/AdminLTE/dist/js/app.min.js"></script>
+    <script src="/AdminLTE/bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="/AdminLTE/dist/js/demo.js"></script>
+    <script src="/AdminLTE/dist/js/adminlte.min.js"></script>
+    
+    <!-- DatePicker -->
+    <script src="/AdminLTE/bower_components/moment/min/moment.min.js"></script>
+    <script src="/AdminLTE/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="/AdminLTE/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    
+	<!-- SlimScroll -->
+	<script src="/AdminLTE/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Optionally, you can add Slimscroll and FastClick plugins.
+         Both of these plugins are recommended to enhance the
+         user experience. Slimscroll is required when using the
+         fixed layout. -->
+  </body>
+  
+  <script type="text/javascript">
+  	$(function(){
+  		$(".fatherNode").click(function(){
+  			var href = $(this).attr("href");
+  			if(href != "/#"){
+  				window.location.href = href;
+  			}
+  		})
+  		
+//   		$("#updateTime").datepicker({
+//   			autoclose: true
+//   		})
+  		
+  		
+  		change();
+  		
+  		// 根据选择的题型切换指定元素可以显示
+  		$("#typeId").change(function(){
+  			change();
+  		})
+  		
+  		// 校验表单提交
+  		$("#infoForm").validate({
+  			rules : {
+  				subjectId: "required",
+  				typeId: "required",
+  				chapter: "required",
+  				difficulty: "required",
+  				score: {
+  					required: true,
+  					digits: true,
+  					maxlength: 2
+  				},
+  				content: "required",
+  				answer: "required",
+//   				createTime: "required",
+//   				updateTime: "required",
+  				status: "required"
+  			},
+  			messages: {
+  				subjectId: "请选择一个学科",
+  				typeId: "请选择一种题型",
+  				chapter: "请选择一个章节",
+  				difficulty: "请选择一个难度",
+  				score: {
+  					required: "请输入题目所占分值",
+  					digits: "只能输入数字",
+  					maxlength: "只能输入1-100之间的数字"
+  				},
+  				content: "请输入题目内容",
+  				answer: "请输入题目答案",
+//   				createTime: "请选择一个日期",
+//   				updateTime: "请选择一个日期",
+  				status: "请选择一个状态"
+  			}
+  		})
+  		
+  		$("#submitBtn").click(function(){
+  			var content = $("#content").val();
+  			var subjectId = $("#subjectId").val();
+  			var typeId = $("#typeId").val();
+  			var chapter = $("#chapter").val();
+  			var difficulty = $("#difficulty").val();
+  			var jsonData = {
+  					"content": content,
+  					"subjectId": subjectId,
+  					"typeId": typeId,
+  					"chapter": chapter,
+  					"difficulty": difficulty
+  			}
+  			$.ajax({
+  				url: "/validateSimilarity",
+  				type: "get",
+  				dataType: "json",
+  				data: jsonData,
+  				success: function(result){
+  					if(!result){
+//   						var value = $("#infoForm").serialize();
+//   						window.location.href = "/" + $("#infoForm").attr("action") + "?" + value;
+							$("#infoForm").submit();
+  					}else{
+  						alert("题库中存在满足条件的类似题目，请勿再次添加！");
+			  			return false;
+  					}
+  				},
+  				error: function(){
+  					alert("请选择或输入对应条件！");
+  					return false;
+  				}
+  			})
+  			return false;
+  		})
+        
+  		setInterval(getDate, 1000);
+  	})
+  	
+  	
+  	function change(){
+		var typeName = $("#typeId").find("option:selected").text();
+		if(typeName.indexOf("单选题") >= 0){
+			$(".otherAnswer").hide();
+			$(".otherAnswer").attr("disabled", "disables");
+			$(".judgeAnswer").hide();
+			$(".judgeAnswer").attr("disabled", "disables");
+			$(".choiceAnswer").show();
+			$(".choiceAnswer").attr("disabled", false);
+			$(".option").attr("disabled", false);
+			$(".choiceAnswer").attr("multiple", false);
+		}else if(typeName.indexOf("多选题") >= 0){
+			$(".otherAnswer").hide();
+			$(".otherAnswer").attr("disabled", "disables");
+			$(".judgeAnswer").hide();
+			$(".judgeAnswer").attr("disabled", "disables");
+			$(".choiceAnswer").show();
+			$(".choiceAnswer").attr("disabled", false);
+			$(".option").attr("disabled", false);
+			$(".choiceAnswer").attr("multiple", "multiple");
+		}else if(typeName.indexOf("判断题") >= 0){
+			$(".otherAnswer").hide();
+			$(".otherAnswer").attr("disabled", "disables");
+			$(".judgeAnswer").show();
+			$(".judgeAnswer").attr("disabled", false);
+			$(".choiceAnswer").hide();
+			$(".choiceAnswer").attr("disabled", "disables");
+			$(".option").attr("disabled", "disables");
+		}else{
+			$(".otherAnswer").show();
+			$(".otherAnswer").attr("disabled", false);
+			$(".judgeAnswer").hide();
+			$(".judgeAnswer").attr("disabled", "disables");
+			$(".choiceAnswer").hide();
+			$(".choiceAnswer").attr("disabled", "disables");
+			$(".option").attr("disabled", "disables");
+		}
+  	}
+  	
+  	function getDate(){
+		var today = new Date();
+		var date = today.getFullYear() + "年" + twoDigits(today.getMonth() + 1)
+					+ "月" + twoDigits(today.getDate()) + "日";
+		var week = "星期" + "日一二三四五六".charAt(today.getDay());
+		var time = twoDigits(today.getHours()) + ":" + twoDigits(today.getMinutes())
+					+ ":" + twoDigits(today.getSeconds());
+		$("#showTime").text(date + "  " + week + "  " + time);
+	}
+	function twoDigits(val){
+		if(val < 10)
+			return "0" + val;
+		return val;
+	}
+	
+	
+  </script>
+</html>
